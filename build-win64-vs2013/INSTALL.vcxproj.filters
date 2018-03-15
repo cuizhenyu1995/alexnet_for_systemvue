@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="Windows-1252"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\UCAS-Demo\Desktop\alexnet_simple\build-win64-vs2013\CMakeFiles\27f889892950a730345f31ed956fb73b\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3042C6E2-C6AA-4E98-B32A-FFE6756878DE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

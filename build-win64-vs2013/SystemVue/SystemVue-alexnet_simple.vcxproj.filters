@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\UCAS-Demo\Desktop\alexnet_simple\source\SystemVue\LibraryProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alexnet_simple_fully_connected_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alexnet_simple_in.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alexnet_simple_conv_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\UCAS-Demo\Desktop\alexnet_simple\source\SystemVue\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\UCAS-Demo\Desktop\alexnet_simple\build-win64-vs2013\SystemVue\Version.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{84706967-B892-4953-ADD0-052B7BC5091D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="alexnet_simple_fully_connected_1.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alexnet_simple_in.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alexnet_simple_conv_1.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

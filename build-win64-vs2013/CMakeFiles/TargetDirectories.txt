@@ -1,0 +1,3 @@
+C:/Users/UCAS-Demo/Desktop/alexnet_simple/build-win64-vs2013/SystemVue/CMakeFiles/SystemVue-alexnet_simple.dir
+C:/Users/UCAS-Demo/Desktop/alexnet_simple/build-win64-vs2013/CMakeFiles/ALL_BUILD.dir
+C:/Users/UCAS-Demo/Desktop/alexnet_simple/build-win64-vs2013/CMakeFiles/ZERO_CHECK.dir
