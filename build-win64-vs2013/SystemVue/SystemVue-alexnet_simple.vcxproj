@@ -172,6 +172,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="alexnet_simple_conv_1.cpp" />
+<<<<<<< HEAD
+    <ClCompile Include="alexnet_simple_conv_2.cpp" />
+=======
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
     <ClCompile Include="alexnet_simple_in.cpp" />
     <ClCompile Include="C:\Users\UCAS-Demo\Desktop\alexnet_simple\source\SystemVue\LibraryProperties.cpp" />
     <ClCompile Include="alexnet_simple_fully_connected_1.cpp" />
@@ -183,6 +187,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <ClInclude Include="alexnet_simple_conv_2.h" />
+=======
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
     <ClInclude Include="alexnet_simple_fully_connected_1.h" />
     <ClInclude Include="alexnet_simple_conv_1.h" />
     <ClInclude Include="alexnet_simple_in.h" />

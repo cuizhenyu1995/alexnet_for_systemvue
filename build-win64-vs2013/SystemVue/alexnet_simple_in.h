@@ -35,9 +35,14 @@ namespace SystemVueModelBuilder
 
 
 		/// define input and output ports
+<<<<<<< HEAD
+		IntCircularBuffer OUT_N;
+		IntMatrixCircularBuffer OUT_D;
+=======
 		IntMatrixCircularBuffer OUT_R;
 		IntMatrixCircularBuffer OUT_G;
 		IntMatrixCircularBuffer OUT_B;
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 
 	protected:

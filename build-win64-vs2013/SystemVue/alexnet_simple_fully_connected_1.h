@@ -33,9 +33,14 @@ namespace SystemVueModelBuilder
 
 		/// define ports
 
+<<<<<<< HEAD
+		IntCircularBuffer IN_N;
+		DoubleMatrixCircularBuffer IN_D;
+=======
 		DoubleMatrixCircularBuffer IN_1;
 		DoubleMatrixCircularBuffer IN_2;
 		DoubleMatrixCircularBuffer IN_3;
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 		DoubleMatrixCircularBuffer OUT_1;
 

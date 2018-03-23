@@ -13,6 +13,12 @@
     <ClCompile Include="alexnet_simple_conv_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="alexnet_simple_conv_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+=======
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\UCAS-Demo\Desktop\alexnet_simple\source\SystemVue\CMakeLists.txt" />
@@ -37,5 +43,11 @@
     <ClInclude Include="alexnet_simple_conv_1.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="alexnet_simple_conv_2.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+=======
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
   </ItemGroup>
 </Project>

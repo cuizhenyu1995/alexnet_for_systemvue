@@ -54,9 +54,14 @@ namespace SystemVueModelBuilder {
 		param = ADD_MODEL_PARAM(INPUT_FILE);
 
 		// Add input/output ports
+<<<<<<< HEAD
+		DFPort IN_DATA = ADD_MODEL_INPUT(IN_D);
+		DFPort IN_NUM = ADD_MODEL_INPUT(IN_N);
+=======
 		DFPort IN_RED = ADD_MODEL_INPUT(IN_1);
 		DFPort IN_GREEN = ADD_MODEL_INPUT(IN_2);
 		DFPort IN_BLUE = ADD_MODEL_INPUT(IN_3);
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 		DFPort OUT1 = ADD_MODEL_OUTPUT(OUT_1);
 
@@ -76,9 +81,14 @@ namespace SystemVueModelBuilder {
 
 	bool alexnet_simple_fully_connected_1::Setup()
 	{
+<<<<<<< HEAD
+		IN_N.SetRate(1);
+		IN_D.SetRate(3);
+=======
 		IN_1.SetRate(1);
 		IN_1.SetRate(1);
 		IN_1.SetRate(1);
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 		OUT_1.SetRate(1);
 
@@ -148,7 +158,13 @@ namespace SystemVueModelBuilder {
 		for (int i = 0; i < MODEL_WEIGHT; i++)
 			for (int j = 0; j < MODEL_SIZE; j++)
 				for (int k = 0; k < MODEL_GROUP; k++)
+<<<<<<< HEAD
+				{
 					fscanf(mf, "%lf", &Model[i][k][j]);
+				}
+=======
+					fscanf(mf, "%lf", &Model[i][k][j]);
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 		std::stringstream sst;
 		sst << "Success read model!" << endl;
@@ -209,14 +225,23 @@ namespace SystemVueModelBuilder {
 			POST_INFO(st.str().c_str());
 		}
 		
+<<<<<<< HEAD
+		//读取上一层分量------------------------------------------------------------
+=======
 		//读取上一层分量
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 		for (int i = 0; i < DATA_SIDE_LENGTH; i++)
 		{
 			for (int j = 0; j < DATA_SIDE_LENGTH; j++)
 			{
+<<<<<<< HEAD
+				for (int k = 0; k < DATA_WEIGHT;k++)
+					fc1_data[k][i][j] = (double)(IN_D[k](i, j));
+=======
 				fc1_data[0][i][j] = (double)(IN_1[0](i, j));
 				fc1_data[1][i][j] = (double)(IN_2[0](i, j));
 				fc1_data[2][i][j] = (double)(IN_3[0](i, j));
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 			}
 		}
 
@@ -233,7 +258,10 @@ namespace SystemVueModelBuilder {
 					return true;
 				}
 			}
+<<<<<<< HEAD
+=======
 
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 		}
 		std::stringstream slst;
 		slst << "Success when calculatting in fully connected layer!" << endl;
@@ -304,6 +332,11 @@ namespace SystemVueModelBuilder {
 		std::stringstream stag;
 		stag << "fully connected finished!" << endl;
 		POST_INFO(stag.str().c_str());
+<<<<<<< HEAD
+		fclose(mf);
+		fclose(bf);
+=======
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 		return true;
 	}
 

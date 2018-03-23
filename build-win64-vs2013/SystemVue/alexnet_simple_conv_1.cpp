@@ -11,7 +11,11 @@
 #include <math.h>
 #include <string.h>
 #include <time.h>
+<<<<<<< HEAD
+#include <iomanip>
+=======
 
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 using namespace std;
 #include <iostream>
@@ -27,9 +31,12 @@ using std::fabs;
 #define MODEL_WEIGHT 3
 #define MODEL_GROUP 3
 #define DATA_SIDE_LENGTH 227
+<<<<<<< HEAD
+=======
 #define CONST_BIASE_R 124
 #define CONST_BIASE_G 117
 #define CONST_BIASE_B 104
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 #define RESULT_SIDE_LENGTH 114
 #define POOLING_STEP_LENGTH 2
 
@@ -61,6 +68,13 @@ namespace SystemVueModelBuilder {
 
 		// Add input/output ports
 		
+<<<<<<< HEAD
+		DFPort IN_DATA = ADD_MODEL_INPUT(IN_D);
+		DFPort IN_NUM = ADD_MODEL_INPUT(IN_N);
+
+		DFPort OUT_DATA = ADD_MODEL_OUTPUT(OUT_D);
+		DFPort OUT_NUM = ADD_MODEL_OUTPUT(OUT_N);
+=======
 		DFPort IN_BLUE = ADD_MODEL_INPUT(IN_B);
 		DFPort IN_GREEN = ADD_MODEL_INPUT(IN_G);
 		DFPort IN_RED = ADD_MODEL_INPUT(IN_R);
@@ -68,6 +82,7 @@ namespace SystemVueModelBuilder {
 		DFPort OUT1 = ADD_MODEL_OUTPUT(OUT_1);
 		DFPort OUT2 = ADD_MODEL_OUTPUT(OUT_2);
 		DFPort OUT3 = ADD_MODEL_OUTPUT(OUT_3);
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 		
 
@@ -85,6 +100,13 @@ namespace SystemVueModelBuilder {
 
 	bool alexnet_simple_conv_1::Setup()
 	{
+<<<<<<< HEAD
+		IN_N.SetRate(1);
+		IN_D.SetRate(3);
+
+		OUT_N.SetRate(1);
+		OUT_D.SetRate(3);
+=======
 		IN_R.SetRate(1);
 		IN_G.SetRate(1);
 		IN_B.SetRate(1);
@@ -92,6 +114,7 @@ namespace SystemVueModelBuilder {
 		OUT_1.SetRate(1);
 		OUT_2.SetRate(1);
 		OUT_3.SetRate(1);
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 		return true;
 	};
@@ -164,11 +187,23 @@ namespace SystemVueModelBuilder {
 			{
 				for (int k = 0; k < MODEL_GROUP; k++)
 				{
+<<<<<<< HEAD
+					fscanf(mf,"%lf", &model[j][k][i]);
+					
+				}
+			}
+			fclose(mf);
+		}
+		std::stringstream syt;
+		syt <<setprecision(20)<< model[0][0][0] << endl;
+		POST_INFO(syt.str().c_str());
+=======
 					fscanf(mf,"%lf", &model[MODEL_WEIGHT-1-j][k][i]);
 				}
 			}
 		}
 		
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 		//为res申请空间
 		fal = 0;
 		res = new double **[MODEL_GROUP + 1];
@@ -202,10 +237,19 @@ namespace SystemVueModelBuilder {
 					res[i][j][k] = 0;
 
 		//为data申请空间
+<<<<<<< HEAD
+		int DATA_WEIGHT=IN_N[0];
+
+		fal = 0;
+		c1_data = new double **[DATA_WEIGHT + 1];
+		if (c1_data == NULL) fal = 1;
+		for (int i = 0; i< DATA_WEIGHT + 1; i++)
+=======
 		fal = 0;
 		c1_data = new double **[MODEL_WEIGHT + 1];
 		if (c1_data == NULL) fal = 1;
 		for (int i = 0; i< MODEL_WEIGHT + 1; i++)
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 		{
 			c1_data[i] = new double *[DATA_SIDE_LENGTH + 1];
 			if (c1_data[i] == NULL) fal = 1;
@@ -234,9 +278,14 @@ namespace SystemVueModelBuilder {
 		{
 			for (int j = 0; j < DATA_SIDE_LENGTH; j++)
 			{
+<<<<<<< HEAD
+				for (int k = 0; k < DATA_WEIGHT;k++)
+					c1_data[k][i][j] = (double)(IN_D[k](i, j));
+=======
 				c1_data[0][i][j] = (double)(IN_R[0](i, j) - CONST_BIASE_R);
 				c1_data[1][i][j] = (double)(IN_G[0](i, j) - CONST_BIASE_G);
 				c1_data[2][i][j] = (double)(IN_B[0](i, j) - CONST_BIASE_B);
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 			}
 		}
 		std::stringstream st;
@@ -291,11 +340,35 @@ namespace SystemVueModelBuilder {
 				for (int jj = 0; jj < DATA_SIDE_LENGTH; jj++)
 				{
 					res[i][ii][jj] = res[i][ii][jj] + ttt;
+<<<<<<< HEAD
+=======
 					res[i][ii][jj]=max(res[i][ii][jj],0.0);
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 				}
 			}
 		}
 
+<<<<<<< HEAD
+		for (int i = 0; i < MODEL_GROUP; i++)
+		{
+			for (int ii = 0; ii < DATA_SIDE_LENGTH; ii++)
+			{
+				for (int jj = 0; jj < DATA_SIDE_LENGTH; jj++)
+				{
+					res[i][ii][jj] = max(res[i][ii][jj], 0.0);
+				}
+			}
+		}
+
+		for (int i = 0; i < 10; i++)
+		{
+			std::stringstream st;
+			st <<"no."<<i<<"="<< res[0][0][i] << endl;
+			POST_INFO(st.str().c_str());
+		}
+
+=======
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 		//max-pooling操作(padding=same)&输出操作--------------------------------------------------
 		for (int i = 0; i < MODEL_GROUP; i++)
 		{
@@ -318,11 +391,18 @@ namespace SystemVueModelBuilder {
 			}
 
 			//输出到缓冲区
+<<<<<<< HEAD
+			OUT_D[i] = out;
+
+		}
+		OUT_N[0] = MODEL_GROUP;
+=======
 			if (i == 0) OUT_1[0] = out;
 			else if (i == 1) OUT_2[0] = out;
 			else OUT_3[0] = out;
 
 		}
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 
 		for (int i = 0; i<MODEL_WEIGHT + 1; i++)
 		{
@@ -354,6 +434,10 @@ namespace SystemVueModelBuilder {
 		std::stringstream stag;
 		stag << "converting finished!" << endl;
 		POST_INFO(stag.str().c_str());
+<<<<<<< HEAD
+		fclose(bf);
+=======
+>>>>>>> d296eb9cd2398f0c4f0035ea10bb4ca09fb8da3c
 		return true;
 	}
 
